@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const recipeSchema = mongoose.Schema(
   {
@@ -20,6 +20,11 @@ const recipeSchema = mongoose.Schema(
     images: {
       type: [String],
     },
+    userId:{
+      type:Schema.Types.ObjectId,
+      ref:'User',
+      required:true
+    }
  },
   { timeStamps: true }
 );
